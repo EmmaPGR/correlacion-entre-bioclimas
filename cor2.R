@@ -2,7 +2,7 @@
 # ajuste su directorio de trabajo
 setwd('~/Bioclimas');
 
-# set environmental layers to open
+# ajuste las varaibles que requiere
 
 variables = c(paste('bio',0,1:9,sep=""),paste('bio',10:19,sep=""));
 
