@@ -3,17 +3,12 @@
 setwd('~/Bioclimas');
 
 # ajuste las varaibles que requiere
-
 variables = c(paste('bio',0,1:9,sep=""),paste('bio',10:19,sep=""));
-
 i = 1;
-
 while (i <= length(variables)) {
 	# elimina las primeras lineas de texto del ascii
 	values = scan(file=paste(variables[i],'.asc',sep=""),skip=6);
-	
 	values[values == -9999] = NA;
-
 	if (i == 1) {
 		df = data.frame(values);
 	} else {
@@ -28,7 +23,7 @@ names(df) = variables;
 
 corr.matrix = cor(df,use='complete.obs');
 
-write.csv(corr.mtrx,file="corr_matrix.csv",quote=FALSE)
+write.csv(corr.matrix,file="corr_matrix.csv",quote=FALSE)
 
 # Plot de las correlaciones
 
